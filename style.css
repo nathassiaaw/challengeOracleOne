@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root{
+
+/* fonte padrão*/
+--main-font: 'Inter', sans-serif;
+font-size: 62.5%;
+}
+
+body{
+    background-color: hsl(235, 24%, 19%);
+    font-family: var(--main-font);
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 7rem;
+    width: 100%;
+    padding: 1rem;
+
+}
+
+button {
+    font-size: 1.6rem;
+    width: 25rem;
+    height: 5rem;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    color:white;
+    background-image: linear-gradient(90deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+
+}
+
+button:hover {
+    background: hsl(233, 14%, 35%);
+}
+
+textarea {
+    border-style: none;
+    outline: none;
+    resize: none;
+    box-shadow: 2px 7px 15px 0px rgba(0, 0, 0, 0.82);
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+
+}
+
+footer {
+    height: 3rem;
+    color: hsl(298, 26.5%, 80%);
+}
+
+.logo {
+    width: 5rem;
+    margin:2rem 1rem 0 1rem;
+}
+
+/*Div cryptography input*/
+.container-cripto {
+    min-width: 100%;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    
+}
+
+/*Box text input*/
+#text-input {
+    box-sizing: border-box;
+    min-width: 85%;
+    margin: 2rem auto 1rem auto;
+    height: 35rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+/*Exclamation icon*/
+#exclamation {
+    margin-right: 0.6rem;
+}
+
+.div-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem auto 2rem auto;
+}
+
+.btn-crip {
+    background-color: darkgray;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/*Div cryptography output*/
+.container-descrip {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto 3rem auto;
+}
+
+/*Box text output*/
+#text-output {
+    max-width: 85%;
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-radius: 24px;
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto 2rem auto;
+}
+
+.copy {
+    background: white;
+    width: 15rem;
+    height: 4rem;
+    color: hsl(298, 54%, 55%);
+}
+
+/*media query tablet*/
+@media screen and (min-width: 768px) {
+
+#text-output{
+    min-width: 75%;
+}
+
+.div-buttons {
+    flex-direction: row;
+}
+
+.btn-crip + .btn-descrip {
+    margin-left: 2rem;
+}
+
+.copy {
+    width: 20rem;
+    height: 5rem;
+}
+
+textarea {
+    font-size: 1.8rem;
+}
+
+span {
+    font-size: 1.4rem;
+}
+
+}
+
