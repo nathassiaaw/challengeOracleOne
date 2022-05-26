@@ -1,68 +1,53 @@
-var input = document.querySelector('textarea#text-input');
+const input = document.querySelector('textarea#text-input');
 
-var output = document.querySelector('textarea#text-output');
+const output = document.querySelector('textarea#text-output');
 
-var button1 = document.querySelector('button.btn-crip');
-button1.onclick = cripto;
+const buttonCopy = document.querySelector('button.copy');
 
-var button2 = document.querySelector('button.btn-descrip');
-button2.onclick = descripto;
+//função botão cripto//
+function btnCript() {
+    const textoEncrip = cripto(input.value)
+    output.value = textoEncrip
+}
 
-var buttonCopy = document.querySelector('button.copy');
-buttonCopy.onclick = copy; 
+//função botão descripto//
+function btnDescript() {
+    const textoEncrip = descripto(input.value)
+    output.value = textoEncrip
+}
 
 //função de criptografar//
-function cripto() {
-
-    if(input.value.length == 0){
-        document.getElementsByName("text-descrip")[0].placeholder="Sua mensagem não foi encontrada, escreva seu texto acima";
-        output.focus();
-    } else {
-        var textCripto = input.value;
-        var text =  textCripto.replace(/e/g, 'enter');
-        var text = text.replace(/i/g, 'imes');
-        var text = text.replace(/a/g, 'ai');
-        var text = text.replace(/o/g, 'ober');
-        var text = text.replace(/u/g, 'ufat');
-
-    document.getElementById('text-output').innerHTML = `${text}`;
-    }
-}
-
-
-//função de descriptografar//
-function descripto() {
-
-    if(input.value.length == 0){
-        document.getElementsByName("text-descrip")[0].placeholder="Sua mensagem não foi encontrada";
-        //input.focus();//
-    } else {
-        document.getElementsByClassName("container-descrip").innerHTML = '';
-
-        var textCripto = input.value;
-        var text =  textCripto.replace(/enter/g, 'e');
-        var text = text.replace(/imes/g, 'i');
-        var text = text.replace(/ai/g, 'a');
-        var text = text.replace(/ober/g, 'o');
-        var text = text.replace(/ufat/g, 'u');
-
-    document.getElementById('text-output').innerHTML = `${text}`;
+function cripto(stringEncrip) {
+        const textCripto = input.value;
+        let matrizText = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+        stringEncrip = stringEncrip.toLowerCase();
+        for(let i = 0; i < matrizText.length; i++) {
+            if(stringEncrip.includes(matrizText[i][0])) {
+                stringEncrip = stringEncrip.replaceAll(matrizText[i][0], matrizText[i][1]);
+            }
+        }
+        return stringEncrip;
     }
 
-}
+//função descriptografar//
+    function descripto(stringEncrip) {
+        const textCripto = input.value;
+        let matrizText = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+        stringEncrip = stringEncrip.toLowerCase();
+        for(let i = 0; i < matrizText.length; i++) {
+            if(stringEncrip.includes(matrizText[i][1])) {
+                stringEncrip = stringEncrip.replaceAll(matrizText[i][1], matrizText[i][0]);
+            }
+        }
+        return stringEncrip;
+    }
 
+    
 //função copiar//
 function copy() {
-    
-        var copyText = document.getElementById("text-output");
-      
-        /* Select the text field */
+        let copyText = document.getElementById("text-output");
         copyText.select();
-        copyText.setSelectionRange(0, 99999); /* For mobile devices */
-      
-         /* Copy the text inside the text field */
+        copyText.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(copyText.value);
-      
-        /* Alert the copied text */
         alert("Texto copiado para a área de transferência");
       }

@@ -13,19 +13,20 @@
     <img src="imagens/logo_detetive.png" alt="logo-detetive" class="logo">
     <h1>Decodificador de mensagens</h1>
     </header>
-    <div class="container-cripto">
-        <textarea id="text-input" name="text-here" placeholder="Digite a mensagem para criptografar ou descriptografar" rows="10" cols="40"></textarea>
-        <span><img id="exclamation" src="imagens/bi_exclamation-circle-fill.svg">Apenas letras minúsculas e sem acentos</span>
-
-    </div>
-    <div class="div-buttons">
-        <button class="btn-crip">Criptografar</button> 
-        <button class="btn-descrip">Descriptografar</button>
-    </div>
-    <div class="container-descrip">
-        <textarea id="text-output" name="text-descrip" placeholder="Veja aqui sua mensagem secreta" rows="10" cols="40"></textarea>
-        <button class="copy">Copiar</button>
-    </div>
+    <main>
+        <section class="container-cripto">
+            <textarea id="text-input" name="text-here" placeholder="Digite a mensagem para criptografar ou descriptografar" rows="10" cols="40"></textarea>
+            <span><img id="exclamation" src="imagens/bi_exclamation-circle-fill.svg">Apenas letras minúsculas e sem acentos</span>
+        </section>
+        <section class="div-buttons">
+            <button class="btn-crip" onclick="btnCript()">Criptografar</button>
+            <button class="btn-descrip" onclick="btnDescript()">Descriptografar</button>
+        </section>
+        <section class="container-descrip">
+            <textarea id="text-output" name="text-descrip" placeholder="Veja aqui sua mensagem secreta" rows="10" cols="40"></textarea>
+            <button class="copy" onclick="copy()">Copiar</button>
+        </section>
+    </main>
 <footer>
     <p>Desenvolvido por Nathassia para Desafio Oracle One</p>
 </footer>

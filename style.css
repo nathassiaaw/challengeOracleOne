@@ -43,6 +43,7 @@ button {
     cursor: pointer;
     color:white;
     background-image: linear-gradient(90deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+    transition: 0.5s;
 
 }
 
